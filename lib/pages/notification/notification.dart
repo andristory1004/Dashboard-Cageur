@@ -4,36 +4,80 @@ import 'package:dashboard_santi/widgetCard/topTitle.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-class notif extends StatelessWidget {
+class notif extends StatefulWidget {
   const notif({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<notif> createState() => _notifState();
+}
 
+class _notifState extends State<notif> {
+  List<String> labels = ['Any notif', 'All Notif'];
+  int counter = 0;
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      child: ListView(
-        children: <Widget>[
-          toptitle(imageUrl: "asset/images/dashboard/ic_notif.png", title: "Notification"),
+      child: Column(
+        children: [
+          toptitle(
+              imageUrl: "asset/images/dashboard/ic_notif.png",
+              title: "Notification"),
+          SizedBox(),
           SizedBox(
-            height: 30,
+            height: 15,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              customSwitch()
+          ToggleSwitch(
+            minWidth: 90.0,
+            cornerRadius: 20.0,
+            activeBgColors: [
+              [Colors.green[800]!],
+              [Colors.red[800]!]
             ],
+            activeFgColor: Colors.green,
+            inactiveBgColor: Colors.grey,
+            inactiveFgColor: Colors.white,
+            totalSwitches: 2,
+            labels: ['Dokter', 'All'],
+            radiusStyle: true,
+            onToggle: (index) {
+              setState(() {
+                counter = index!;
+              });
+            },
           ),
-          notifCard(
-              title: "New Apoitment",
-              deskripsi:
-                  "Demo user booked an appointment on 03-09-2022 at 10:40",
-              time: "2022-03-09 02:22:39"),
-          notifCard(
-              title: "New Apoitment",
-              deskripsi:
-                  "Demo user booked an appointment on 03-09-2022 at 10:40",
-              time: "2022-03-09 02:22:39")
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                Text(labels [counter])
+                // notifCard(
+                //     title: "New Apoitment",
+                //     deskripsi:
+                //         "Demo user booked an appointment on 03-09-2022 at 10:40",
+                //     time: "2022-03-09 02:22:39"),
+                // notifCard(
+                //     title: "New Apoitment",
+                //     deskripsi:
+                //         "Demo user booked an appointment on 03-09-2022 at 10:40",
+                //     time: "2022-03-09 02:22:39"),
+                // notifCard(
+                //     title: "New Apoitment",
+                //     deskripsi:
+                //         "Demo user booked an appointment on 03-09-2022 at 10:40",
+                //     time: "2022-03-09 02:22:39"),
+                // notifCard(
+                //     title: "New Apoitment",
+                //     deskripsi:
+                //         "Demo user booked an appointment on 03-09-2022 at 10:40",
+                //     time: "2022-03-09 02:22:39"),
+                // notifCard(
+                //     title: "New Apoitment",
+                //     deskripsi:
+                //         "Demo user booked an appointment on 03-09-2022 at 10:40",
+                //     time: "2022-03-09 02:22:39")
+              ],
+            ),
+          ),
         ],
       ),
     ));

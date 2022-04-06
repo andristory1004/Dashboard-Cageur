@@ -1,3 +1,4 @@
+import 'package:dashboard_santi/style/theme.dart';
 import 'package:dashboard_santi/widgetCard/topTitle.dart';
 import 'package:dashboard_santi/widgetCard/usersCard.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +8,42 @@ class users extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+     Widget search() {
+      return Container(
+        width: 350,
+        height: 50,
+        padding: EdgeInsets.only(left: 15, right: 15),
+        margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+            color: white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  spreadRadius: 0,
+                  blurRadius: 3,
+                  offset: Offset(0, 1))
+            ]),
+        child: TextField(
+          decoration:
+              InputDecoration(border: InputBorder.none, hintText: "Search"),
+        ),
+      );
+    }
     return Scaffold(
         body: Container(
-      child: ListView(
+      child: Column(
         children: <Widget>[
           toptitle(imageUrl: "asset/images/dashboard/ic_users.png", title: "Pengguna"),
-          SizedBox(height: 30,),
-          usersCard()
+          SizedBox(height: 15,),
+          search(),
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                usersCard()
+              ],
+            ),
+          ),
         ],
       ),
     ));

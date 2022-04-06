@@ -31,6 +31,10 @@ dependencies:
     sdk: flutter
   lottie: ^0.7.0
   toggle_switch: ^1.4.0
+  rflutter_alert: ^2.0.4
+  dropdown_button2: ^1.2.2
+  dropdown_formfield: ^0.1.4
+  dropdown_plus: ^0.0.9
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -66,6 +70,12 @@ flutter:
     - asset/images/nurhayati.png
     - asset/images/dokter.png
     - asset/images/Polygon.png
+    - asset/images/del.png
+    - asset/images/santi1.png
+    - asset/images/santi2.png
+    - asset/images/wirda1.png
+    - asset/images/wirda2.png
+    - asset/images/banner1.png
     - asset/images/splash/splashImage.png
     - asset/images/dashboard/ic_banner.png
     - asset/images/dashboard/ic_chat.png
@@ -78,6 +88,14 @@ flutter:
     - asset/images/dashboard/ic_setting.png
     - asset/images/dashboard/ic_tiket.png
     - asset/images/dashboard/ic_users.png
+    - asset/images/departement/adddep.png
+    - asset/images/departement/dalam.png
+    - asset/images/departement/jantung.png
+    - asset/images/departement/kejiwaan.png
+    - asset/images/departement/ortho.png
+    - asset/images/departement/paru.png
+    - asset/images/departement/umum.png
+    - asset/images/departement/urology.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

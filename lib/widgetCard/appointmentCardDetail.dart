@@ -4,7 +4,7 @@ import 'package:dashboard_santi/style/theme.dart';
 import 'package:dashboard_santi/widgetCard/formCard.dart';
 import 'package:flutter/material.dart';
 
-class appoitmentCard extends StatelessWidget {
+class appoitmentCardDetail extends StatelessWidget {
   final String id;
   final String nama;
   final String jk;
@@ -14,7 +14,7 @@ class appoitmentCard extends StatelessWidget {
   final String waktuAppoitment;
   final String statusAppoitment;
   final String tipeAppoitment;
-  const appoitmentCard({
+  const appoitmentCardDetail({
     Key? key,
     required this.id,
     required this.nama,
@@ -29,7 +29,7 @@ class appoitmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15),
+      margin: EdgeInsets.only(left: 15, right: 15, top: 7.5, bottom: 7.5),
       height: 200,
       decoration: BoxDecoration(
         color: Colors.white,

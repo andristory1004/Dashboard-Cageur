@@ -1,3 +1,5 @@
+import 'package:dashboard_santi/style/theme.dart';
+import 'package:dashboard_santi/widgetCard/topTitle.dart';
 import 'package:flutter/material.dart';
 
 class patient extends StatelessWidget {
@@ -26,19 +28,45 @@ class patient extends StatelessWidget {
         ],
       );
     }
-
+     Widget search() {
+      return Container(
+        width: 350,
+        height: 50,
+        padding: EdgeInsets.only(left: 15, right: 15),
+        margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+            color: white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  spreadRadius: 0,
+                  blurRadius: 3,
+                  offset: Offset(0, 1))
+            ]),
+        child: TextField(
+          decoration:
+              InputDecoration(border: InputBorder.none, hintText: "Search"),
+        ),
+      );
+    }
     return Scaffold(
         body: Container(
-      child: ListView(
+      child: Column(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              section1(),
-              SizedBox(
-                height: 30,
-              ),
-            ],
-          )
+          toptitle(
+            imageUrl: 'asset/images/dashboard/ic_patient.png', 
+            title: 'Patient'),
+          SizedBox(height: 15,),
+          search(),
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                
+                 
+              ],
+            ),
+          ),
         ],
       ),
     ));

@@ -10,27 +10,28 @@ class toptitle extends StatelessWidget {
     return Stack(
         children: <Widget>[
           Image(image: AssetImage('asset/images/Ellipse.png')),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BackButton(
-                onPressed: () => Navigator.of(context).pop(),
+          Container(
+                margin: EdgeInsets.only(top: 35),
+                child: BackButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
               ),
-              Center(
+          Center(
                 child: Container(
+                  margin: EdgeInsets.only(top: 45),
                     child: Column(children: <Widget>[
                       Image(
                         image: AssetImage(imageUrl),
                         width: 75,
                         height: 75,
                       ),
+                      SizedBox(height: 10,),
                       Text(title,
                           style:
                               TextStyle(fontSize: 22, fontWeight: FontWeight.w700))
                     ])),
               ),
-            ],
-          )
+          
         ],
       );
   }

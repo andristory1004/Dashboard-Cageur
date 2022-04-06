@@ -1,68 +1,80 @@
+import 'dart:developer';
+
 import 'package:dashboard_santi/style/theme.dart';
+import 'package:dashboard_santi/widgetCard/buttonAdd.dart';
 import 'package:dashboard_santi/widgetCard/dokterCard.dart';
 import 'package:dashboard_santi/widgetCard/topTitle.dart';
 import 'package:flutter/material.dart';
 
-class dokter extends StatelessWidget {
-  const dokter({Key? key}) : super(key: key);
+class dokter extends StatefulWidget {
+  const dokter({ Key? key }) : super(key: key);
 
   @override
+  State<dokter> createState() => _dokterState();
+}
+
+class _dokterState extends State<dokter> {
+  @override
   Widget build(BuildContext context) {
-    Widget buttonAdd() {
+    List<Widget> listDokter =[];
+    int counter = 1;
+    // for(int i=0; i<15; i++){
+    //   listDokter.add(i);
+    // }
+
+   
+   
+    
+
+    Widget search() {
       return Container(
-          width: 327,
-          height: 50,
-          decoration: BoxDecoration(
-              color: Colors.green, borderRadius: BorderRadius.circular(32)),
-          child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'addDokter');
-              },
-              child: Text("Tambah",
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                      color: white))));
+        width: 350,
+        height: 50,
+        padding: EdgeInsets.only(left: 15, right: 15),
+        margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+            color: white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  spreadRadius: 0,
+                  blurRadius: 3,
+                  offset: Offset(0, 1))
+            ]),
+        child: TextField(
+          decoration:
+              InputDecoration(border: InputBorder.none, hintText: "Search"),
+        ),
+      );
     }
 
+    
     return Scaffold(
         body: Container(
-      child: ListView(
+      child: Column(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              toptitle(
+          toptitle(
               imageUrl: "asset/images/dashboard/ic_dokter.png",
-              title: "Docter"),
-          SizedBox(
-            height: 30,
+              title: "Dokter"),
+          SizedBox(height: 15,),
+          search(),
+          Expanded(
+            child: ListView(
+              children: [
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                dokterCard(),
+                
+            ]
+            ),
           ),
-          dokterCard(),
-          SizedBox(
-            height: 15,
-          ),
-          dokterCard(),
-          SizedBox(
-            height: 15,
-          ),
-          dokterCard(),
-          SizedBox(
-            height: 15,
-          ),
-          dokterCard(),
-          SizedBox(
-            height: 15,
-          ),
-          dokterCard(),
-          SizedBox(
-            height: 25,
-          ),
-          buttonAdd(),
-          SizedBox(
-            height: 25,
-          ),
-            ],
-          )
+          buttonAdd(nameAdd: "Tambah dokter", linkUrl: 'addDokter')
         ],
       ),
     ));

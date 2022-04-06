@@ -33,22 +33,7 @@ class _SignUpState extends State<SignUp> {
       );
     }
 
-    Widget section2() {
-      return Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Masuk sebagai ",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+
 
     Widget section3() {
       return Container(
@@ -129,7 +114,7 @@ class _SignUpState extends State<SignUp> {
                     Navigator.pushNamed(context, "homePage");
                   },
                   child: Text(
-                    "Sign Up",
+                    "Daftar",
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w700,
@@ -173,10 +158,6 @@ class _SignUpState extends State<SignUp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               section1(),
-              SizedBox(
-                height: 10,
-              ),
-              section2(),
               SizedBox(
                 height: 10,
               ),

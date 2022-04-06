@@ -1,9 +1,9 @@
 import 'package:dashboard_santi/style/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class SignIn extends StatefulWidget {
-  
-  const SignIn({ Key? key }) : super(key: key);
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -16,9 +16,12 @@ class _SignInState extends State<SignIn> {
       return Container(
         child: Column(
           children: <Widget>[
-            Image(image: AssetImage('asset/images/Logo Santi.png'), width: 65, height: 65),
+            Image(
+                image: AssetImage('asset/images/Logo Santi.png'),
+                width: 65,
+                height: 65),
             Text(
-              "Admin App SANTI",
+              "Admin Cageur App",
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             Text(
@@ -33,22 +36,6 @@ class _SignInState extends State<SignIn> {
       );
     }
 
-    Widget section2() {
-      return Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Masuk sebagai ",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
 
     Widget section3() {
       return Container(
@@ -61,7 +48,9 @@ class _SignInState extends State<SignIn> {
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                   hintText: "Email or phone Number",
-                  prefixIcon: Icon(Icons.mail,),
+                  prefixIcon: Icon(
+                    Icons.mail,
+                  ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(32)))),
         ),
@@ -79,18 +68,28 @@ class _SignInState extends State<SignIn> {
                   prefixIcon: Icon(Icons.lock),
                   hintText: "Password",
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32)))),
+                      borderRadius: BorderRadius.circular(32)
+                  )
+            ),
+              
+          ),
         ),
         Container(
-          width: 327,
-          child: 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
-                onPressed: () {}, child: Text("Forgot Password..?", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500,),)),
-            ],
-          ))
+            width: 327,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Forgot Password..?",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )),
+              ],
+            ))
       ]));
     }
 
@@ -102,7 +101,7 @@ class _SignInState extends State<SignIn> {
               width: 327,
               height: 50,
               decoration: BoxDecoration(
-                  color: Colors.green, borderRadius: BorderRadius.circular(32)),
+                  color: green, borderRadius: BorderRadius.circular(32)),
               child: TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "homePage");
@@ -129,7 +128,7 @@ class _SignInState extends State<SignIn> {
               width: 327,
               height: 50,
               decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(32)),
+                  color: red, borderRadius: BorderRadius.circular(32)),
               child: TextButton(
                   onPressed: () {},
                   child: Text(
@@ -146,7 +145,7 @@ class _SignInState extends State<SignIn> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Don't have an Account..?",
+                Text("Klik Daftar untuk menjadi mitra kita!",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -155,12 +154,11 @@ class _SignInState extends State<SignIn> {
                   onPressed: () {
                     Navigator.pushNamed(context, "SignUp");
                   },
-                  child: Text("Sign Up",
+                  child: Text("Daftar",
                       style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700,
-                        )
-                  ),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      )),
                 ),
               ],
             )
@@ -177,11 +175,7 @@ class _SignInState extends State<SignIn> {
             children: <Widget>[
               section1(),
               SizedBox(
-                height: 10,
-              ),
-              section2(),
-              SizedBox(
-                height: 10,
+                height: 20,
               ),
               section3(),
               SizedBox(

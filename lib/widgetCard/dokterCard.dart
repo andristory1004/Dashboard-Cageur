@@ -6,7 +6,7 @@ class dokterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 15),
+      margin: EdgeInsets.only(left: 15, right: 15, top: 7.5, bottom: 7.5,),
       padding: EdgeInsets.all(10),
       height: 150,
       decoration: BoxDecoration(
@@ -55,5 +55,6 @@ class dokterCard extends StatelessWidget {
         ],
       ),
     );
+    
   }
 }

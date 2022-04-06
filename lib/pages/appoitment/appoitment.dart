@@ -1,4 +1,6 @@
-import 'package:dashboard_santi/widgetCard/appoitmentCard.dart';
+import 'package:dashboard_santi/style/theme.dart';
+import 'package:dashboard_santi/widgetCard/appointmentCard.dart';
+import 'package:dashboard_santi/widgetCard/topTitle.dart';
 import 'package:flutter/material.dart';
 
 class appoitment extends StatelessWidget {
@@ -6,57 +8,54 @@ class appoitment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget section1() {
-      return Stack(
-        children: <Widget>[
-          Image(image: AssetImage('asset/images/Ellipse.png')),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BackButton(
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              Center(
-                child: Container(
-                    child: Column(children: <Widget>[
-                      Image(
-                        image: AssetImage("asset/images/dashboard/ic_tiket.png"),
-                        width: 75,
-                        height: 75,
-                      ),
-                      Text("Appoitment",
-                          style:
-                              TextStyle(fontSize: 22, fontWeight: FontWeight.w700))
-                    ])),
-              ),
-            ],
-          )
-        ],
+    TextEditingController? _textEditingController = TextEditingController();
+    Widget search() {
+      return Container(
+        width: 350,
+        height: 50,
+        padding: EdgeInsets.only(left: 15, right: 15),
+        margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+            color: white,
+            borderRadius: BorderRadius.circular(30),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  spreadRadius: 0,
+                  blurRadius: 3,
+                  offset: Offset(0, 1))
+            ]),
+        child: TextField(
+          decoration:
+              InputDecoration(border: InputBorder.none, hintText: "Search"),
+        ),
       );
     }
 
     return Scaffold(
         body: Container(
-      child: ListView(
+      child: Column(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              section1(),
-              SizedBox(
-                height: 30,
-              ),
-              appoitmentCard(
-                  id: "1234",
-                  nama: "Siapa..?",
-                  jk: "Laki-laki",
-                  usia: "19",
-                  noHp: "086979767658",
-                  tglAppoitment: "12 januari 2023",
-                  waktuAppoitment: "waktuAppoitment",
-                  statusAppoitment: "statusAppoitment",
-                  tipeAppoitment: "tipeAppoitment"),
-            ],
-          )
+          toptitle(
+              imageUrl: "asset/images/dashboard/ic_tiket.png",
+              title: "Appointment"),
+          SizedBox(
+            height: 10,
+          ),
+          search(),
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+                appointmentCard(Nama: "M Thoriq S", NIK: "3205059905000006"),
+              ],
+            ),
+          ),
         ],
       ),
     ));
